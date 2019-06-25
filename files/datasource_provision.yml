@@ -1,0 +1,28 @@
+apiVersion: 1
+
+# list of datasources to insert/update depending
+# whats available in the database
+datasources:
+- name: security_tests
+  type: influxdb
+  access: proxy
+  orgId: 1
+  url: http://$INFLUXDB_URL:$INFLUXDB_PORT
+  password: $INFLUXDB_PASSWORD
+  user: $INFLUXDB_USER
+  database: security_tests
+  isDefault: false
+  version: 1
+  editable: true
+
+- name: Jmeter
+  type: influxdb
+  access: proxy
+  orgId: 1
+  url: http://$INFLUXDB_URL:$INFLUXDB_PORT
+  password: $INFLUXDB_PASSWORD
+  user: $INFLUXDB_USER
+  database: jmeter
+  isDefault: false
+  version: 1
+  editable: true
