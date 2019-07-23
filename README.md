@@ -11,10 +11,10 @@ It will create a docker volume, which helps to saveall changes after restart
   docker run -d -p 3000:3000 -v grafana:/var/lib/grafana --name=grafana grafana 
 
 ## Variables by default
-INFLUXDB_URL="localhost" 
-INFLUXDB_PORT="8086" 
-INFLUXDB_USER="tiger_admin" 
-INFLUXDB_PASSWORD="password"
+INFLUXDB_URL="localhost" <br />
+INFLUXDB_PORT="8086" <br />
+INFLUXDB_USER="tiger_admin" <br />
+INFLUXDB_PASSWORD="password" <br />
 
 By default grafana uses the next credentials: <br />
 User: **admin** Password: **admin**
