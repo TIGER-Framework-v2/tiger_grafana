@@ -1,4 +1,4 @@
-FROM grafana/grafana:6.2.4
+FROM grafana/grafana:6.7.6
 
 ENV INFLUXDB_URL="localhost" \
     INFLUXDB_PORT="8086" \

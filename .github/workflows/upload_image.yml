@@ -1,0 +1,32 @@
+name: push_docker_image_to_dockerhub
+
+on:
+  push:
+    tags: v[0-9]+.[0-9]+.[0-9]+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set env
+        id: tag_var
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/tags/}
+
+      - name: docker login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_HUB_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_USER_PASSWORD}}
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+      - name: Build docker container
+        env:
+          TAG_VERSION: ${{ steps.tag_var.outputs.tag }}
+        run: docker build -t tiger_grafana:$TAG_VERSION .
+
+      - name: Push image to docker
+        env:
+          TAG_VERSION: ${{ steps.tag_var.outputs.tag }}
+        run: docker push tigerframework/tiger_grafana:$TAG_VERSION
