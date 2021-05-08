@@ -1,4 +1,6 @@
 # tiger_grafana
+Last tag:<br>
+[![GitHub tag](https://img.shields.io/github/tag/TIGER-Framework-v2/tiger_grafana.svg)](https://GitHub.com/TIGER-Framework-v2/tiger_grafana/tags/)
 
 ## How to run
  docker run -d -p 3000:3000 --name=grafana grafana
@@ -21,3 +23,4 @@ User: **admin** Password: **admin**
 
 ## Additional Links
 [ How to use grafana image ](https://grafana.com/docs/installation/docker/ )
+
