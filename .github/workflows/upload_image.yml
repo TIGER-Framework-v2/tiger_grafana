@@ -24,7 +24,7 @@ jobs:
       - name: Build docker container
         env:
           TAG_VERSION: ${{ steps.tag_var.outputs.tag }}
-        run: docker build -t tiger_grafana:$TAG_VERSION .
+        run: docker build -t tigerframework/tiger_grafana:$TAG_VERSION .
 
       - name: Push image to docker
         env:
