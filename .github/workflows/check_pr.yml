@@ -3,6 +3,8 @@ name: Checking docker image
 on:
   pull_request:
     branches: [ master ]
+    paths-ignore:
+      - '*.md'
   workflow_dispatch:
 
 
